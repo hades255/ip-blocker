@@ -1,23 +1,23 @@
-import { Routes, Route } from 'react-router-dom'
-import { Elements } from '@stripe/react-stripe-js'
-import { loadStripe } from '@stripe/stripe-js'
-import Dashboard from './pages/Dashboard'
-import Layout from './components/Layout'
-import Settings from './pages/Settings'
-import BlockList from './pages/BlockList'
-import Analytics from './pages/Analytics'
-import Guide from './pages/Guide'
-import Admin from './pages/Admin'
-import PaymentForm from './components/PaymentForm'
-import { useAuth } from './hooks/useAuth'
+import { Routes, Route } from "react-router-dom";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import Dashboard from "./pages/Dashboard";
+import Layout from "./components/Layout";
+import Settings from "./pages/Settings";
+import BlockList from "./pages/BlockList";
+import Analytics from "./pages/Analytics";
+import Guide from "./pages/Guide";
+import Admin from "./pages/Admin";
+import PaymentForm from "./components/PaymentForm";
+import { useAuth } from "./hooks/useAuth";
 
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
+const stripePromise = null; //loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
 
 function App() {
-  const { user, loading } = useAuth()
+  const { user, loading } = useAuth();
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   if (false && !user) {
@@ -32,7 +32,7 @@ function App() {
           {/* Add your sign-in form here */}
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -49,7 +49,7 @@ function App() {
         </Route>
       </Routes>
     </Elements>
-  )
+  );
 }
 
-export default App
+export default App;

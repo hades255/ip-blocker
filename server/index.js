@@ -8,6 +8,7 @@ import { createClient } from "@supabase/supabase-js";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import dotenv from "dotenv";
+import morgan from "morgan";
 dotenv.config();
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -29,6 +30,7 @@ const rateLimiter = new RateLimiterMemory({
 
 // Middleware
 app.use(cors());
+app.use(morgan());
 app.use(helmet());
 app.use(express.json());
 app.use(express.static(join(__dirname, "../dist")));
