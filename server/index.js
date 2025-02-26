@@ -34,6 +34,7 @@ app.use(morgan());
 app.use(helmet());
 app.use(express.json());
 app.use(express.static(join(__dirname, "../dist")));
+app.use("/assets", express.static(join(__dirname, "../dist/assets")));
 
 // Rate limiting middleware
 app.use(async (req, res, next) => {
