@@ -122,7 +122,7 @@ export default function Layout() {
             <div className="flex h-16 shrink-0 items-center">
               <img
                 className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                src="https://img.freepik.com/premium-vector/vector-design-ip-blocking-icon-style_1134108-137628.jpg?w=360"
                 alt="IP Blocker"
               />
             </div>
